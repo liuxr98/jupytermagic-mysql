@@ -1,0 +1,1 @@
+docker run --name ryanliu-mysql-2 -e MYSQL_ROOT_PASSWORD=admin -d -p 13306:3306 mysql:latest
