@@ -79,9 +79,9 @@ class MySQLMagic(Magics):
             else:
                 if i<len(sqls)-1:
                     continue
-                if sql_type == 'SELECT':
+                records = self.cursor.fetchall()
+                if len(records)>0:
                     cols = [tp[0] for tp in self.cursor.description]
-                    records = self.cursor.fetchall()
                     df = DataFrame(records)
                     df.columns = cols
                     if args.dest_var:
